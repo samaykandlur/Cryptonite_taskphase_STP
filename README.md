@@ -1,1 +1,1 @@
-[...](additional/CRYPTONITE.png)
+![...](additional/CRYPTONITE.png)
