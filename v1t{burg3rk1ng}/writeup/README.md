@@ -19,7 +19,7 @@
 4. username = v1t, password = p4ssw0rd
 5.  Used these credentials to log in.
 
-![img](v1t{burg3rk1ng}/writeup/images/loginpanel.png)
+![img](images/loginpanel.png)
 
 **Flag:** `v1t{p4ssw0rd}`
 
@@ -51,9 +51,9 @@
             1200px 64px #0f0;
     }
 ```
-4. Used the CSS code to create a small HTML file to visualize it — the flag appeared after applying transformations (rotation and zoom). [Check out the code](v1t{burg3rk1ng}/writeup/additional/stylishflag.html)
+4. Used the CSS code to create a small HTML file to visualize it — the flag appeared after applying transformations (rotation and zoom). [Check out the code](additional/stylishflag.html)
 
-![img](v1t{burg3rk1ng}/writeup/images/stylishflag.png)
+![img](images/stylishflag.png)
 
 **Flag:** `v1t{h1d30ut_CSS}`
 
@@ -70,7 +70,7 @@
 2. Inspected the page header section.
 3. Found the flag embedded in the favicon [check this out](https://tommytheduck.github.io/tiny_flag/favicon.ico)
    
-![img](v1t{burg3rk1ng}/writeup/images/tinyflag.png)
+![img](images/tinyflag.png)
 
 **Flag:** `V1T{T1NY_ICO}`
 
@@ -86,7 +86,7 @@
 1. Inspected the source code.
 2. Found multiple `<mark>` tags — each containing characters of the flag.
 
-![img](v1t{burg3rk1ng}/writeup/images/markthelyrics.png)
+![img](images/markthelyrics.png)
 
 **Flag:** `V1T{MCK-pap-cool-ooh-yeah}`
 
@@ -215,7 +215,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 1. Keywords: 2007, archive, east met west.
 2. Found [wikileaks](https://wikileaks.org/wiki/Iraq_OIF_Property_List.csv) while searching
 
-![img](v1t{burg3rk1ng}/writeup/images/forgotteninv.png)
+![img](images/forgotteninv.png)
 
 **Flag:** `v1t{david.j.hoskins@us.army.mil}`
 
@@ -265,7 +265,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 ### Approach
 1. Used [Principal Component Analysis](https://29a.ch/photo-forensics/#pca) on the image
 
-![img](v1t{burg3rk1ng}/writeup/images/blank.png)
+![img](images/blank.png)
 
 **Flag:** `v1t{wh1t3_3y3s}`
 
