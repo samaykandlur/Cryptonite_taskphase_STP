@@ -1,1 +1,1 @@
-![...](additional/v1t.png)
+![...](Cryptonite_taskphase_STP/additional/v1t.png)
