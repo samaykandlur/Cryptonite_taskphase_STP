@@ -245,7 +245,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 1. Reverse searched the image.
 2. Found a match showing:
 > "OSINT & Phaleristics: Unveiling FSB 16th Center SIGINT Capabilities".
-[img](images/26thduck.png)
+![img](images/26thduck.png)
 3. Extracted coordinates from the matched page.
 
 
