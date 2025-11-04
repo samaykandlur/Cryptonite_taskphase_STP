@@ -178,7 +178,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 
 ---
 
-## Challenge 2: Dusk Till Duck
+## Challenge 2: Dusk Till Duck (100 pts)
 
 **Description:**
 > As the sun sets over a calm lake, a lone duck drifts across the fading light. The scene looks peaceful, but the park hides more than it seems. Can you figure out where this photo was taken before the night falls?
@@ -197,7 +197,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 ---
 
 
-## Challenge 3: Forgotten Inventory
+## Challenge 3: Forgotten Inventory (100 pts)
 
 **Description:**
 > In the summer of 2007, a massive archive quietly surfaced — a meticulous ledger of items that once rolled across desert sands under foreign command. The file was structured, line after line, page after page, each entry tied to a unit whose banners flew far from home.
@@ -230,7 +230,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 
 ---
 
-## Challenge 5: 16th Duck (OSINT)
+## Challenge 5: 16th Duck (100 pts)
 
 **Description:**
 > Caught someone playing music at this place and here are their belonging, can you find the place? Flag format: v1t{latitude, longitude}
