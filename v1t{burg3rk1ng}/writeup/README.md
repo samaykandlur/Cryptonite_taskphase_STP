@@ -124,22 +124,333 @@
 **Description:**
 
 ### Approach
+1. Using Ghidra, I opened the `snail` file
+2. I opened the main function. `printf("Enter the flag: ");` This is the function used to check if the flag entered is correct. If it is, itll print ` We check it, it was correct bro: `
+3. ` local_178[0] `  ` local_178[1] ` ...  is the Encrypted flag
+4. `local_178[0x27]` `local_178[0x28]`... is the key
+5. Scripted python code [code](additional/snail.py)
+6. Obtained flag
+
+![img](images/snail.png)
+
+**Flag:** `v1t{sn4il_d3l1v3ry_sl0w_4f_36420762ab}`
+
+
 
 ---
 
 ## Challenge 3: Duck RPG (100 pts)
 
 **Description:**
+> Can you patch the batch to get the secret ending of the game ?
 
 ### Approach
+
+
 
 ---
 
 ## Challenge 5: Bad Reverser (100 pts)
 
 **Description:**
+> I always beat myself up because I'm bad at reverse engineering :<
 
 ### Approach
+1. Using Ghidra, i opened the `chal_goon` file
+2. Searched for "flag", found it in [locations](images/badreverser.png). 
+3. Viewed `FUN_001011a0(void)`
+4. Found the following code:
+```
+ undefined8 FUN_001011a0(void)
+
+
+{
+
+  int iVar1;
+
+  char *pcVar2;
+
+  size_t sVar3;
+
+  int *piVar4;
+
+  long lVar5;
+
+  char *pcVar6;
+
+  uint uVar7;
+
+  ulong uVar8;
+
+  int iVar9;
+
+  timespec *__tp;
+
+  char *pcVar10;
+
+  long in_FS_OFFSET;
+
+  byte bVar11;
+
+  int local_144;
+
+  timespec local_138;
+
+  timespec local_128;
+
+  undefined1 local_118 [16];
+
+  undefined1 local_108 [16];
+
+  undefined1 local_f8 [16];
+
+  undefined1 local_e8 [16];
+
+  undefined8 local_d8;
+
+  byte local_c8 [48];
+
+  undefined4 local_98;
+
+  long local_10;
+
+ 
+
+  bVar11 = 0;
+
+  local_10 = *(long *)(in_FS_OFFSET + 0x28);
+
+  pcVar6 = (char *)&local_98;
+
+  __printf_chk(2,"Enter flag: ");
+
+  pcVar10 = pcVar6;
+
+  for (uVar8 = 0x10; uVar8 != 0; uVar8 = uVar8 - 1) {
+
+    pcVar10[0] = '\0';
+
+    pcVar10[1] = '\0';
+
+    pcVar10[2] = '\0';
+
+    pcVar10[3] = '\0';
+
+    pcVar10[4] = '\0';
+
+    pcVar10[5] = '\0';
+
+    pcVar10[6] = '\0';
+
+    pcVar10[7] = '\0';
+
+    pcVar10 = pcVar10 + (ulong)bVar11 * -0x10 + 8;
+
+  }
+
+  __tp = (timespec *)0x80;
+
+  pcVar10 = pcVar6;
+
+  pcVar2 = fgets(pcVar6,0x80,stdin);
+
+  if (pcVar2 == (char *)0x0) goto LAB_00101393;
+
+  __tp = (timespec *)&DAT_00102018;
+
+  sVar3 = strcspn(pcVar6,"\n");
+
+  *(undefined1 *)((long)&local_98 + sVar3) = 0;
+
+  sVar3 = strlen(pcVar6);
+
+  pcVar10 = pcVar6;
+
+  if (sVar3 != 0xb) goto LAB_00101393;
+
+  if (local_98 != 0x7b743176) goto LAB_00101393;
+
+  piVar4 = __errno_location();
+
+  uVar8 = 0;
+
+  __tp = (timespec *)0x0;
+
+  *piVar4 = 0;
+
+  pcVar10 = (char *)0x0;
+
+  lVar5 = ptrace(PTRACE_TRACEME,0,0);
+
+  if ((lVar5 == -1) && (*piVar4 != 0)) goto LAB_00101393;
+
+  clock_gettime(1,&local_138);
+
+  local_144 = 0;
+
+  do {
+
+    local_144 = local_144 + 1;
+
+  } while (local_144 < 500000);
+
+  __tp = &local_128;
+
+  pcVar10 = (char *)0x1;
+
+  clock_gettime(1,__tp);
+
+  if (500000000 <
+
+      ((local_128.tv_sec - local_138.tv_sec) * 1000000000 + local_128.tv_nsec) - local_138.tv_nsec)
+
+  goto LAB_00101393;
+
+  signal(5,FUN_00101560);
+
+  lVar5 = 0;
+
+  uVar7 = (byte)local_98 + 7 ^ 0x5a;
+
+  uVar8 = (ulong)uVar7;
+
+  do {
+
+    local_c8[lVar5] = (&DAT_00102040)[lVar5] ^ (byte)uVar7 ^ 0xaa;
+
+    lVar5 = lVar5 + 1;
+
+  } while (lVar5 != 0x29);
+
+  local_d8 = 0;
+
+  __tp = (timespec *)0x0;
+
+  lVar5 = 0;
+
+  pcVar6 = (char *)0x0;
+
+  local_118 = (undefined1  [16])0x0;
+
+  local_108 = (undefined1  [16])0x0;
+
+  local_f8 = (undefined1  [16])0x0;
+
+  local_e8 = (undefined1  [16])0x0;
+
+  do {
+
+    bVar11 = local_c8[lVar5];
+
+    iVar1 = (int)pcVar6;
+
+    uVar7 = iVar1 + 1;
+
+    pcVar6 = (char *)(ulong)uVar7;
+
+    pcVar10 = pcVar6;
+
+    if (bVar11 == 1) goto LAB_001013a0;
+
+    iVar9 = (int)__tp;
+
+    if (bVar11 == 2) {
+
+      if (0 < iVar9) {
+
+        *(uint *)(local_118 + (long)(iVar9 + -1) * 4) =
+
+             *(uint *)(local_118 + (long)(iVar9 + -1) * 4) ^ (uint)uVar8 & 0xff;
+
+        goto LAB_001013c2;
+
+      }
+
+    }
+
+    else if (bVar11 == 3) {
+
+      if ((uVar7 != 0x29) && (0 < iVar9)) {
+
+        __tp = (timespec *)(ulong)(iVar9 - 1U);
+
+        pcVar6 = (char *)(ulong)(iVar1 + 2);
+
+        uVar7 = (uint)*(char *)((long)&local_98 + (ulong)local_c8[(int)uVar7] + 3);
+
+        pcVar10 = (char *)(ulong)uVar7;
+
+        if (uVar7 == (byte)local_118[(long)(int)(iVar9 - 1U) * 4]) goto LAB_001013c2;
+
+      }
+
+    }
+
+    else if (bVar11 == 0xff) {
+
+      if (DAT_0010401c == 0) {
+
+        puts("Correct quack!");
+
+        if (local_10 == *(long *)(in_FS_OFFSET + 0x28)) {
+
+          return 0;
+
+        }
+
+                    /* WARNING: Subroutine does not return */
+
+        __stack_chk_fail();
+
+      }
+
+    }
+
+    else if (bVar11 == 0xee) goto LAB_001013c2;
+
+LAB_00101393:
+
+    do {
+
+      do {
+
+        iVar1 = FUN_00101570();
+
+LAB_001013a0:
+
+      } while (((int)pcVar10 == 0x29) || (iVar9 = (int)__tp, 0xf < iVar9));
+
+      pcVar6 = (char *)(ulong)(iVar1 + 2);
+
+      __tp = (timespec *)(ulong)(iVar9 + 1);
+
+      *(uint *)(local_118 + (long)iVar9 * 4) = (uint)local_c8[(int)pcVar10];
+
+      pcVar10 = (char *)(long)iVar9;
+
+LAB_001013c2:
+
+      lVar5 = (long)(int)pcVar6;
+
+    } while (0x28 < (int)pcVar6);
+
+  } while( true );
+
+}
+
+```
+5. By analysing `sVar3 = strlen(pcVar6); if (sVar3 != 0xb) goto fail;` we know that the flag is 11 bytes long as 0xb (hexa) is 11 in decimal.
+6. By analysing `if (local_98 != 0x7b743176) goto fail;`  we know this corresponds to `v1t{` which is the starting of the flag. 
+7. Wrote a Python script to reverse the program's logic. It first calculates the decryption key 0x8d (derived from 'v' + 7 ^ 0x5a ^ 0xaa) and uses it to decrypt the 41 bytes of bytecode at DAT_00102040.
+
+```
+`8c d1 8f 8e 8d 8c c7 8f 8e 8c 8c d3 8f 8e 8f 8c f5 8f 8e 8e 8c c8 8f 8e 89 8c 9e 8f 8e 88 8c ee 8f 8e 8b 8c d7 8f 8e 8a 72`
+```
+
+
+
+
+**Flag:** `v1t{my_b4D}`
 
 ---
 
