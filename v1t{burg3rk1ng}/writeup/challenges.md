@@ -1,6 +1,6 @@
 # **V1T CTF**
 
-# Web Exploitation Writeup — V1T CTF
+# Web Exploitation Writeup
 
 ## Challenge 1: Login Panel (100 pts)
 
@@ -102,7 +102,7 @@
 
 
 
-# Reverse Engineering Writeup — V1T CTF
+# Reverse Engineering Writeup
 
 ## Challenge 2: Snail Delivery (100 pts)
 
@@ -139,7 +139,7 @@
 
 ---
 
-# Cryptography — V1T CTF
+# Cryptography
 
 ## Challenge 4: Misconfigured RSA (100 pts)
 
@@ -159,7 +159,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 
 ---
 
-# Osint Writeup — V1T CTF
+# Osint Writeup
 
 ## Challenge 1: Among USniversity (100 pts)
 
@@ -249,7 +249,7 @@ c = 1072170872230133528644194265886134394347080316995220277867116842174394318981
 ---
 
 
-# Misc Writeup — V1T CTF
+# Misc Writeup
 
 ## Challenge 4: Blank (100 pts)
 
